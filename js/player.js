@@ -6,7 +6,8 @@ function player (){
 	this.posY = 387;
 	this.largeur = 80;
 	this.hauteur = 93;
-	this.element.className("player");
+	this.element.className = "player";
+	this.element.style.position = "relative";
 	this.element.style.left = "320px";
 	this.element.style.top = "387px";
 
