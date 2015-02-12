@@ -3,6 +3,7 @@ function Etoile(x,y){
 	this.y;
 	this.speed = 3;
 	this.velocity = 0.3;
+	
 	this.element = document.createElement("div");
 	this.element.className = "etoile";
 	this.element.style.left = this.x + "px";
