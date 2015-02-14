@@ -51,6 +51,8 @@ function supprimerÈlements(){
 
 function worldStep(){
 	for(var i = 0 ; i < spriteList.length ; i++ ){
+		spriteList[i].tick();
 
 	}
+	window.requestAnimationFrame(worldStep);
 }

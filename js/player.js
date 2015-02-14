@@ -22,19 +22,28 @@ function player (){
 
 player.prototype.tick = function (){
 
-	if( leftPushed == true && this.speedX >= -this.maxSpeedX ){
-		this.speedX -= this.maxSpeedX;
+	if( leftPushed == true){
+		this.speedX -= this.velocityX;
 
+		if (this.speedX <= -this.maxSpeedX)
+		{
+			this.speedX = -this.maxSpeedX;
+		}
 
-		
 	}
 
 	else if(leftPushed == false){
 
 		this.speedX = 0;
+
 	}
-	else if(rightPushed == true && this.speedX <= this.maxSpeedX){
-		this.speedX += this.maxSpeedX;
+	if(rightPushed == true ){
+		this.speedX += this.velocityX;
+		
+		if( this.speedX >= this.maxSpeedX)
+		{
+			this.speedX = this.maxSpeedX;	
+		}
 	}
 
 	else if(rightPushed == false){
@@ -42,9 +51,10 @@ player.prototype.tick = function (){
 	}
 
 	
-	left = this.element.offsetLeft;
-
-	this.element.style.left = left + this.speedX + "px";
+	var leftOffset = this.element.offsetLeft+ this.speedX;
+	console.log(this.speedX);
+	
+	// this.element.style.left = leftOffset + "px";
 
 
 
