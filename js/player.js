@@ -33,9 +33,11 @@ player.prototype.tick = function (){
 
 	}
 
-	if(leftPushed == false && ){
+	if(leftPushed == false ){
 		this.speedX += this.velocityX;
-		if(this.speedX <= 0 )
+		if(this.speedX <= 0 ){
+			
+		}
 
 	}
 
@@ -53,11 +55,11 @@ player.prototype.tick = function (){
 
 
 
-	this.posX = this.posX + this.speedX;
+	// this.posX = this.posX + this.speedX;
 
-	console.log(this.speedX);
+	// console.log(this.speedX);
 	
-	this.element.style.left= this.posX + "px";
+	// this.element.style.left= this.posX + "px";
 
 
 
