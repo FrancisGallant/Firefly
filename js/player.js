@@ -6,6 +6,7 @@ function player (){
 	this.posY = 387;
 	this.largeur = 80;
 	this.hauteur = 93;
+	this.isAlive = true;
 	this.element.className = "player";
 	this.element.style.position = "relative";
 	this.element.style.left = "320px";
@@ -51,8 +52,8 @@ player.prototype.tick = function (){
 	}
 
 	
-	var leftOffset = this.element.offsetLeft+ this.speedX;
-	console.log(this.speedX);
+	var leftOffset = this.element.offsetLeft + this.speedX;
+	//console.log(this.speedX);
 	
 	// this.element.style.left = leftOffset + "px";
 
