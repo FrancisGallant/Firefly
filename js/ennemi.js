@@ -14,4 +14,10 @@ function Ennemi(){
 Ennemi.prototype.tick = function(){
 	this.posY += this.speedX;
 	this.element.style.top = this.posY + "px";
+
+	if(this.posY >= 550){
+		this.isAlive = false;
+		//temporaire en réalite doit
+		//enlever de la vie au joueur
+	}
 }
