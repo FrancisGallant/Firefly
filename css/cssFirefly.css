@@ -25,3 +25,9 @@
 	height: 5px;
 	background-color: white;
 }
+
+.ennemi{
+	width:89px;
+	height:86px;
+	background-image: url("../images/ship2.png");
+}
