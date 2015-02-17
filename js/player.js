@@ -7,7 +7,7 @@ function player (){
 	this.largeur = 80;
 	this.hauteur = 93;
 	this.element.className = "player";
-	this.element.style.position = "relative";
+	this.element.style.position = "absolute";
 	this.element.style.left = "320px";
 	this.element.style.top = "387px";
 	this.maxSpeedX = 10;
@@ -32,11 +32,15 @@ player.prototype.tick = function (){
 
 	}
 
-	else if(leftPushed == false){
-
-		this.speedX = 0;
+	if(leftPushed == false && ){
+		this.speedX += this.velocityX;
+		if(this.speedX <= 0 )
 
 	}
+
+
+
+
 	if(rightPushed == true ){
 		this.speedX += this.velocityX;
 		
@@ -46,15 +50,13 @@ player.prototype.tick = function (){
 		}
 	}
 
-	else if(rightPushed == false){
-		this.speedX = 0;
-	}
 
-	
-	var leftOffset = this.element.offsetLeft+ this.speedX;
+
+	this.posX = this.posX + this.speedX;
+
 	console.log(this.speedX);
 	
-	// this.element.style.left = leftOffset + "px";
+	this.element.style.left= this.posX + "px";
 
 
 
