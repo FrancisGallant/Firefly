@@ -12,7 +12,7 @@ function player (){
 	this.element.style.left = "320px";
 	this.element.style.top = "387px";
 	this.maxSpeedX = 10;
-	this.speedX = 0;
+	this.speedX = 5;
 	this.velocityX = 0.5;
 
 
@@ -35,17 +35,18 @@ player.prototype.tick = function (){
 	}
 
 
-	if(leftPushed == false && !(this.speedX==0)){
-		if(this.speedX <= 0 ){
-			this.speedX += this.velocityX;
+	// if(leftPushed == false && !(this.speedX==0)){
 
-			if(this.speedX > 0){
-				this.speedX = 0;
-			}
+	// 	if(this.speedX <= 0 ){
+	// 		this.speedX += this.velocityX;
 
-		}
+	// 		if(this.speedX > 0){
+	// 			this.speedX = 0;
+	// 		}
 
-	}
+	// 	}
+
+	// }
 
 
 
@@ -61,9 +62,9 @@ player.prototype.tick = function (){
 
 
 
-	// this.posX = this.posX + this.speedX;
+	this.posX = this.posX + this.speedX;
 
-	console.log(leftPushed);
+	console.log(this.speedX);
 	this.element.style.left= this.posX + "px";
 
 
