@@ -3,6 +3,8 @@ var spriteList = [];
 var leftPushed = false;
 var rightPushed = false;
 var spacePushed = false;
+var isStarted = false;
+var totalVie = 3;
 
 document.onkeydown = function (e) {
     if (e.which == 65)         leftPushed = true; 
@@ -26,15 +28,20 @@ function init(){
 		if (e.which == 65)         leftPushed = false;                
     	else if (e.which == 68) rightPushed = false;
 		else if(e.which == 32)
-		{
-			spacePushed = false;
-			console.log("space pushed")
-			bg.style.backgroundImage = null;
-			bg.style.backgroundColor = "black";
-			spriteList.push(new player());
-			console.log(spriteList[0].posX)
-			console.log(spriteList[0].posY)
-			worldStep();
+		{	
+			if(!isStarted){
+				spacePushed = false;
+				console.log("space pushed")
+				bg.style.backgroundImage = null;
+				bg.style.backgroundColor = "black";
+				spriteList.push(new player());
+				console.log(spriteList[0].posX)
+				console.log(spriteList[0].posY)
+				worldStep();
+			}
+			else{
+				//powpow ici!!
+			}
 		}
 	}
 
