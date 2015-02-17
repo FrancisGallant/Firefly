@@ -29,6 +29,7 @@ function init(){
 			spriteList.push(new player());
 			console.log(spriteList[0].posX)
 			console.log(spriteList[0].posY)
+			//creationEtoiles()
 			worldStep();
 		}
 	}
@@ -36,23 +37,33 @@ function init(){
 }
 
 function creationEnnemi(){
-
+	//a faire
 }
 
 function creationEtoiles(){
-	if(Math.random() > 0.1){
 		spriteList.push(new Etoile()); // a changer
-	}
 }
 
-function supprimerÈlements(){
 
+function supprimerElements(){
+	for (var i = 0; i < spriteList.length; i++) {
+		if(!spriteList[i].isAlive){
+			console.log("dans supprimer")
+			document.getElementById("body").removeChild(spriteList[i].element);
+			spriteList.splice(i,1);
+			i--;
+		}
+	}
 }
 
 function worldStep(){
+	if(Math.random() > 0.001){
+		creationEtoiles();
+	}
 	for(var i = 0 ; i < spriteList.length ; i++ ){
 		spriteList[i].tick();
-
+		//console.log("dans world step")
 	}
+	supprimerElements();
 	window.requestAnimationFrame(worldStep);
 }
